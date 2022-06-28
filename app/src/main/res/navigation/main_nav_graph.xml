@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/betterFuelFragment">
+
+    <fragment
+        android:id="@+id/betterFuelFragment"
+        android:name="br.com.gmauricio.mycar.ui.betterfuel.BetterFuelFragment"
+        android:label="BetterFuelFragment"
+        tools:layout="@layout/fragment_better_fuel">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://www.mycar.com.br/betterfuelfragment" />
+        <argument
+            android:name="user_email"
+            app:argType="string"
+            android:defaultValue="Não definido" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="br.com.gmauricio.mycar.ui.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://www.mycar.com.br/signup" />
+        <action
+            android:id="@+id/action_signUpFragment_to_betterFuelFragment"
+            app:destination="@id/betterFuelFragment"
+            app:popUpTo="@id/logInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="br.com.gmauricio.mycar.ui.login.LoginFragment"
+        android:label="LogInFragment"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_betterFuelFragment"
+            app:destination="@id/betterFuelFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listCarsFragment"
+        android:name="br.com.gmauricio.mycar.ui.listCars.ListCarsFragment"
+        android:label="ListCarsFrament"
+        tools:layout="@layout/list_cars"
+        />
+
+<!--    <action-->
+<!--        android:id="@+id/action_logInFragment_to_betterFuelFragment"-->
+<!--        app:destination="@id/betterFuelFragment"-->
+<!--        app:popUpTo="@id/logInFragment"-->
+<!--        app:popUpToInclusive="true"/>-->
+<!--    <action-->
+<!--        android:id="@+id/action_logInFragment_to_signUpFragment"-->
+<!--        app:destination="@id/signUpFragment"/>-->
+
+</navigation>

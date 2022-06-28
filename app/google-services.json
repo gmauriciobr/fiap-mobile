@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1059904484663",
+    "project_id": "mica-f3bba",
+    "storage_bucket": "mica-f3bba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059904484663:android:91e60cfb1f4030699616b2",
+        "android_client_info": {
+          "package_name": "br.com.gmauricio.mycar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059904484663-vnuh6i19kvk1s5bbd8t2nllcmn21gmic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Qn7RNIEaSX0QS2tMp_K5S2RJwfPfOAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059904484663-vnuh6i19kvk1s5bbd8t2nllcmn21gmic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
