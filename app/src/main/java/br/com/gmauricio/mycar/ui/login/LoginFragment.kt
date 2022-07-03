@@ -84,21 +84,20 @@ class LoginFragment : BaseFragment() {
     private fun setUpView(view: View) {
         tvSubTitleSignUp = view.findViewById(R.id.tvSubTitleLogin)
         containerLogin = view.findViewById(R.id.containerLogin)
-        tvResetPassword = view.findViewById(R.id.tvResetPassword)
-        tvNewAccount = view.findViewById(R.id.tvNewAccount)
-
-        btLogin = view.findViewById(R.id.btLogin)
-
         etEmailLogin = view.findViewById(R.id.etEmailLogin)
         etPasswordLogin = view.findViewById(R.id.etPasswordLogin)
+
+        btLogin = view.findViewById(R.id.btLogin)
         btLogin.setOnClickListener {
             loginViewModel.signIn(etEmailLogin.text.toString(), etPasswordLogin.text.toString() )
         }
 
+        tvResetPassword = view.findViewById(R.id.tvResetPassword)
         tvResetPassword.setOnClickListener {
             loginViewModel.resetPassword(etEmailLogin.text.toString())
         }
 
+        tvNewAccount = view.findViewById(R.id.tvNewAccount)
         tvNewAccount.setOnClickListener {
             findNavController().navigate(R.id.signUpFragment)
         }

@@ -16,14 +16,19 @@ class LoginViewModel : ViewModel() {
 
     fun signIn(email: String, password: String) {
         loginState.value = RequestState.Loading
-        if (validateFields(email, password)) { mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener { if (it.isSuccessful) {
-                loginState.value = RequestState.Success(mAuth.currentUser!!) } else {
-                loginState.value = RequestState.Error( Throwable(
-                    it.exception?.message ?: "Não foi possível realizar a requisição" )
-                ) }
+        if (validateFields(email, password)) {
+            mAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    loginState.value = RequestState.Success(mAuth.currentUser!!)
+                } else {
+                loginState.value = RequestState.Error(Throwable(
+                    it.exception?.message ?: "Não foi possível realizar a requisição" ))
+                }
             }
-        } }
+        }
+    }
+
     private fun validateFields(email: String, password: String): Boolean {
         if(email.isEmpty()) {
             loginState.value = RequestState.Error(Throwable("E-mail não pode ser vazio"))
@@ -43,16 +48,16 @@ class LoginViewModel : ViewModel() {
     fun resetPassword(email: String) {
         resetPasswordState.value = RequestState.Loading
         if(email.isNotEmpty()) {
-            FirebaseAuth.getInstance().sendPasswordResetEmail(email) .addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                resetPasswordState.value = RequestState.Success("Verifique sua caixa de e-mail")
-            } else {
-                resetPasswordState.value = RequestState.Error( Throwable(
-                    task.exception?.message ?: "Não foi possível realizar a requisição" )
-                ) }
+            FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    resetPasswordState.value = RequestState.Success("Verifique sua caixa de e-mail")
+                } else {
+                    resetPasswordState.value = RequestState.Error( Throwable(
+                        task.exception?.message ?: "Não foi possível realizar a requisição" ))
+                }
+            }
+        } else {
+            resetPasswordState.value = RequestState.Error(Throwable("Não foi possível resetar a senha"))
         }
-    } else {
-        resetPasswordState.value = RequestState.Error(Throwable("Não foi possível resetar a senha"))
-    }
     }
 }

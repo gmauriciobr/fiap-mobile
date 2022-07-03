@@ -25,28 +25,25 @@
 
     <string name="signup_subtitle">Preencha os dados da sua conta</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string name="label_better_fuel_subtitle">Descubra o melhor custo/benefício</string>
+    <string name="label_better_fuel_subtitle">Seu Anuncio de Carro</string>
     <string name="label_marca">MARCA</string>
     <string name="label_modelo">MODELO</string>
     <string name="label_ano">ANO</string>
     <string name="label_valor">VALOR</string>
-    <string name="label_km_gasoline">KM/L GASOLINA</string>
-    <string name="label_km_ethanol">KM/L ETANOL</string>
-    <string name="label_price_gasoline">Preço Gasolina</string>
-    <string name="label_price_ethanol">Preço Álcool</string>
-    <string name="label_gas_station">Posto de Gasolina</string>
-    <string name="label_average_consumption">Consumo médio</string>
-    <string name="label_calculate">Descobrir melhor combustível</string>
+    <string name="label_calculate">Salvar</string>
     <string name="label_clear">Limpar dados</string>
+    <string name="label_create_car">Novo</string>
 
-    <string name="loading_message_processing">Carregando</string>
+    <string name="loading_message_processing">Aguarde...</string>
+    <string name="saved_sucefully">Salvo com sucesso!</string>
+    <string name="want_to_delete_menssage">Deseja apagar o registro?"</string>
 
     <string name="default_notification_channel_id">default</string>
     <string name="default_notification_channel_name">Padrão</string>
     <string name="default_notification_channel_description">Canal padrão de notificações</string>
+    <string name="delete_succefuly">Deletado com sucesso!</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Excluir</string>
 
 
 </resources>

@@ -7,14 +7,10 @@ import android.widget.EditText
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import br.com.gmauricio.mycar.R
-import br.com.gmauricio.mycar.databinding.FragmentSignUpBinding
 import br.com.gmauricio.mycar.models.NewUser
 import br.com.gmauricio.mycar.models.RequestState
 import br.com.gmauricio.mycar.ui.base.auth.BaseFragment
-import br.com.gmauricio.mycar.ui.betterfuel.BetterFuelFragmentArgs
 
 class SignUpFragment : BaseFragment() {
 
