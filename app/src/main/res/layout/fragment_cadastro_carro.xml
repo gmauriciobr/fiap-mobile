@@ -19,13 +19,13 @@
         android:paddingBottom="16dp">
 
         <ImageView
-            android:id="@+id/btSignOut"
+            android:id="@+id/btHome"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="end"
             android:paddingStart="24dp"
             android:paddingTop="12dp"
-            android:src="@drawable/ic_signout" />
+            android:src="@drawable/ic_home" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                 <EditText
                     android:id="@+id/etMarca"
                     style="@style/field_edit_text"
-                    tools:text="Chevrolet" />
+                    tools:text="Volkswagen" />
 
             </LinearLayout>
 
@@ -83,7 +83,7 @@
                 <EditText
                     android:id="@+id/etModelo"
                     style="@style/field_edit_text"
-                    tools:text="Cruze Sport LTZ" />
+                    tools:text="Golf 1.4 TSI Highline" />
 
             </LinearLayout>
 
@@ -101,7 +101,7 @@
                         android:id="@+id/etAno"
                         style="@style/field_edit_text_number"
                         android:maxLength="4"
-                        tools:text="10.6" />
+                        tools:text="2019" />
 
                 </LinearLayout>
 
@@ -115,7 +115,7 @@
                         android:id="@+id/etValor"
                         style="@style/field_edit_text_number"
                         android:maxLength="9999999"
-                        tools:text="6.1" />
+                        tools:text="100000" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -123,9 +123,9 @@
             <LinearLayout style="@style/container_section"/>
 
             <Button
-                android:layout_marginTop="24dp"
                 android:id="@+id/btCalculate"
                 style="@style/button"
+                android:layout_marginTop="24dp"
                 android:text="@string/label_calculate" />
 
             <TextView

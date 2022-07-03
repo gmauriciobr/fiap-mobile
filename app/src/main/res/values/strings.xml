@@ -9,6 +9,7 @@
     <string name="label_username">SEU NOME</string>
     <string name="label_phone">TELEFONE</string>
     <string name="label_email">E-MAIL</string>
+    <string name="label_seller">CONTATO</string>
     <string name="label_password">SENHA</string>
     <string name="label_accept_terms">Li e aceitos os termos</string>
     <string name="label_terms">Termos de uso</string>
@@ -25,7 +26,7 @@
 
     <string name="signup_subtitle">Preencha os dados da sua conta</string>
 
-    <string name="label_better_fuel_subtitle">Seu Anuncio de Carro</string>
+    <string name="label_better_fuel_subtitle">Seu Anúncio de Carro</string>
     <string name="label_marca">MARCA</string>
     <string name="label_modelo">MODELO</string>
     <string name="label_ano">ANO</string>

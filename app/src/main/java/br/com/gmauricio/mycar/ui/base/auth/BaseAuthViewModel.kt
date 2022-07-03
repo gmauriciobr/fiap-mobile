@@ -16,9 +16,10 @@ class BaseAuthViewModel : ViewModel() {
 
         val user = mAuth.currentUser
         loggedState.value = RequestState.Loading
-            if (user == null) {
-                loggedState.value = RequestState.Error(Throwable("Usuário deslogado")) } else {
-                loggedState.value = RequestState.Success(user)
-            }
+        if (user == null) {
+            loggedState.value = RequestState.Error(Throwable("Usuário deslogado"))
+        } else {
+            loggedState.value = RequestState.Success(user)
         }
+    }
 }

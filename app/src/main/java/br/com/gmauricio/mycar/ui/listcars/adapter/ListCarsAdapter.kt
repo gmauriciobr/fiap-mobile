@@ -37,6 +37,7 @@ class ListCarsAdapter(
         var tvModelo : TextView = itemView.findViewById(R.id.tvModelo)
         var tvAno : TextView = itemView.findViewById(R.id.tvAno)
         var tvValor : TextView = itemView.findViewById(R.id.tvValor)
+        var tvEmail : TextView = itemView.findViewById(R.id.tvEmail)
 
         init {
             itemView.setOnClickListener {
@@ -48,10 +49,11 @@ class ListCarsAdapter(
 
         fun bindView(car: Car) {
             this.car = car
-            tvMarca.text = "Marca: ${car.marca}"
-            tvModelo.text = "Modelo: ${car.modelo}"
-            tvAno.text = "Ano: ${car.ano}"
-            tvValor.text = "Valor: R$ ${car.valor}"
+            tvMarca.text = car.marca
+            tvModelo.text = car.modelo
+            tvAno.text = car.ano.toString()
+            tvValor.text = car.valor.toString()
+            tvEmail.text = car.email.toString()
         }
 
     }

@@ -40,7 +40,6 @@
     </style>
 
     <style name="container_edit_text">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/shape_edit_text</item>
@@ -124,4 +123,13 @@
         <item name="android:layout_height">32dp</item>
         <item name="android:layout_marginStart">8dp</item>
     </style>
+
+    <style name="container_recycle_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_edit_text</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
 </resources>

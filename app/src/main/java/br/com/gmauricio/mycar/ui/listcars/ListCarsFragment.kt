@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -15,6 +16,7 @@ import br.com.gmauricio.mycar.models.Car
 import br.com.gmauricio.mycar.models.RequestState
 import br.com.gmauricio.mycar.ui.base.BaseAuthFragment
 import br.com.gmauricio.mycar.ui.listcars.adapter.ListCarsAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListCarsFragment : BaseAuthFragment() {
 
@@ -22,7 +24,11 @@ class ListCarsFragment : BaseAuthFragment() {
 
     private val listCarsViewModel: ListCarsViewModel by viewModels()
 
-    private lateinit var btNovo: Button
+//    private lateinit var btNovo: Button
+
+    private lateinit var btSignOut : ImageView
+
+    private lateinit var btNovo: FloatingActionButton
 
     private lateinit var rcListCar: RecyclerView
 
@@ -34,6 +40,7 @@ class ListCarsFragment : BaseAuthFragment() {
 
     @SuppressLint("ResourceType")
     private fun setUpView(view: View) {
+        btSignOut = view.findViewById(R.id.btSignOut)
         btNovo = view.findViewById(R.id.btNovo)
         rcListCar = view.findViewById(R.id.rcListCar)
         rcListCar.layoutManager = LinearLayoutManager(context)
@@ -46,6 +53,10 @@ class ListCarsFragment : BaseAuthFragment() {
 
         btNovo.setOnClickListener {
             findNavController().navigate(R.id.betterFuelFragment)
+        }
+
+        btSignOut.setOnClickListener {
+            listCarsViewModel.logOut()
         }
     }
 
@@ -77,6 +88,14 @@ class ListCarsFragment : BaseAuthFragment() {
                 }
                 is RequestState.Loading -> {
                     showLoading(getString(R.string.loading_message_processing))
+                }
+            }
+        })
+
+        listCarsViewModel.logOutState.observe(viewLifecycleOwner, Observer {
+            when(it) {
+                is RequestState.Success -> {
+                    findNavController().navigate(R.id.logInFragment)
                 }
             }
         })

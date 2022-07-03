@@ -9,5 +9,6 @@ data class Car(
     val modelo: String? = null,
     val ano: Long? = null,
     val valor: Double? = null,
-    val email: String? = null
+    val email: String? = null,
+    var user: NewUser? = null
 )

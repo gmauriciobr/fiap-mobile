@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -30,6 +31,7 @@ class CadastroCarroFragment : BaseAuthFragment() {
     private lateinit var etValor: EditText
 
     private lateinit var btCalculate: Button
+    private lateinit var btHome: ImageView
     private lateinit var btClear: TextView
 
     private var editId: String? = null
@@ -49,6 +51,7 @@ class CadastroCarroFragment : BaseAuthFragment() {
         etValor = view.findViewById(R.id.etValor)
         btCalculate = view.findViewById(R.id.btCalculate)
         btClear = view.findViewById(R.id.btClear)
+        btHome = view.findViewById(R.id.btHome)
         setUpListener()
     }
 
@@ -65,6 +68,10 @@ class CadastroCarroFragment : BaseAuthFragment() {
 
         btClear.setOnClickListener {
             clearFields()
+        }
+
+        btHome.setOnClickListener{
+            findNavController().navigate(R.id.listCarsFragment)
         }
 
         args.carroId?.let {

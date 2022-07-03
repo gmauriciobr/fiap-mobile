@@ -1,56 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:clickable="false">
+    android:clickable="false"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvMarca"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Marca : VW" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/border_set">
 
-    <TextView
-        android:id="@+id/tvModelo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMarca"
-        tools:text="Modelo : Golf" />
+        <LinearLayout style="@style/container_recycle_view">
 
-    <TextView
-        android:id="@+id/tvAno"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvModelo"
-        tools:text="Ano : 2022" />
+            <TextView
+                style="@style/label_edit_text"
+                android:text="@string/label_seller" />
 
-    <TextView
-        android:id="@+id/tvValor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAno"
-        tools:text="Valor: R$ 210000" />
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMarca"
+                tools:text="email@email.com" />
+        </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout style="@style/container_recycle_view">
+
+            <TextView
+                style="@style/label_edit_text"
+                android:text="@string/label_marca" />
+
+            <TextView
+                android:id="@+id/tvMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Volkswagen" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/container_recycle_view">
+
+            <TextView
+                style="@style/label_edit_text"
+                android:text="@string/label_modelo" />
+
+            <TextView
+                android:id="@+id/tvModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMarca"
+                tools:text="Golf" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/container_edit_text_inline">
+
+            <LinearLayout style="@style/container_edit_text_inline_left">
+
+                <TextView
+                    style="@style/label_edit_text"
+                    android:text="@string/label_ano" />
+
+                <TextView
+                    android:id="@+id/tvAno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvModelo"
+                    tools:text="2022" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/container_edit_text_inline_right">
+
+                <TextView
+                    style="@style/label_edit_text"
+                    android:text="@string/label_valor" />
+
+                <TextView
+                    android:id="@+id/tvValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAno"
+                    tools:text="R$ 210000" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

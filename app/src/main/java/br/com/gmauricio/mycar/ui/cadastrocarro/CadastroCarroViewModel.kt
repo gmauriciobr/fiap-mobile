@@ -32,8 +32,7 @@ class CadastroCarroViewModel : ViewModel() {
             modelo = modelo,
             ano = ano,
             valor = valor,
-            email =  mAuth.currentUser?.email ?: ""
-
+            email =  mAuth.currentUser?.email ?: "",
         )
         if (car.id != null) {
             updateCar(car)
